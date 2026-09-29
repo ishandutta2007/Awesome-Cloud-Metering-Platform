@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
   <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
-  <a href="https://github.com/ishandutta2007/Awesome-Cloud-Metering-Platform"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Cloud-Metering-Platform?style=social" alt="GitHub stars" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Cloud-Metering-Platform"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Cloud-Metering-Platform?style=social" alt="GitHub_Stars" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-Cloud-Metering-Platform/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Cloud-Metering-Platform?style=social" alt="GitHub forks" /></a>
   <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
 </p>
@@ -51,9 +51,9 @@ The table below compares leading hosted cloud metering and consumption billing S
 
 ## 🔓 Open-Source GitHub Projects
 
-Below is a list of top open-source cloud metering and usage-based billing projects on GitHub, sorted by star count (descending).
+Below is a list of top open-source cloud metering and usage-based billing projects on GitHub, sorted by Stars_Count (descending).
 
-| 📦 Project | ⭐ GitHub Stars | 📜 License | 🛠️ Tech Stack | 🚀 Key Features & Architectural Focus |
+| 📦 Project | ⭐ GitHub_Stars | 📜 License | 🛠️ Tech Stack | 🚀 Key Features & Architectural Focus |
 | :--- | :--- | :--- | :--- | :--- |
 | **[Lago](https://github.com/getlago/lago)** | [<img src="https://img.shields.io/github/stars/getlago/lago?style=social&color=white" alt="Lago Stars"/>](https://github.com/getlago/lago/stargazers) | AGPL-3.0 | Ruby, Go, PostgreSQL | **Most popular OS billing API** used by Mistral & Groq. Features event deduplication, 6+ metric aggregations, invoicing, and native PSP payment gateway connectors. |
 | **[OpenMeter](https://github.com/openmeterio/openmeter)** | [<img src="https://img.shields.io/github/stars/openmeterio/openmeter?style=social&color=white" alt="OpenMeter Stars"/>](https://github.com/openmeterio/openmeter/stargazers) | Apache-2.0 | Go, ClickHouse, Kafka, Postgres | **High-scale AI & DevTool metering engine**. Features ClickHouse real-time aggregation, Kafka streaming, prepaid credit burndown, real-time entitlements, and LLM token cost tracking. |
