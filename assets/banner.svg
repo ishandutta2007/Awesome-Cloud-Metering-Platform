@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Background Dark Gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+
+    <!-- Glowing Accent Gradients -->
+    <linearGradient id="primaryGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#f3f4f6" />
+      <stop offset="100%" stop-color="#c7d2fe" />
+    </linearGradient>
+
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(30, 41, 59, 0.4)" />
+      <stop offset="100%" stop-color="rgba(15, 23, 42, 0.6)" />
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glowEffect" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <style>
+    .pulse-circle {
+      animation: pulse 4s ease-in-out infinite alternate;
+    }
+    .float-node {
+      animation: float 6s ease-in-out infinite alternate;
+    }
+    .wave-line {
+      stroke-dasharray: 8 8;
+      animation: dash 30s linear infinite;
+    }
+    .data-stream {
+      stroke-dasharray: 6 12;
+      animation: dash 12s linear infinite;
+    }
+    .shimmer-text {
+      animation: opacityPulse 3s ease-in-out infinite alternate;
+    }
+    .meter-bar {
+      animation: grow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.3; }
+      100% { transform: scale(1.15); opacity: 0.6; }
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-12px); }
+    }
+    @keyframes dash {
+      to { stroke-dashoffset: -300; }
+    }
+    @keyframes opacityPulse {
+      0% { opacity: 0.85; }
+      100% { opacity: 1; }
+    }
+  </style>
+
+  <!-- Base Background Layer -->
+  <rect width="1200" height="360" rx="16" fill="url(#bgGradient)" />
+  <rect width="1200" height="360" rx="16" fill="url(#grid)" />
+
+  <!-- DYNAMIC ANIMATED BACKGROUND ELEMENTS (Z-INDEX: LOW) -->
+  
+  <!-- Ambient Glow Orbs -->
+  <circle cx="150" cy="90" r="180" fill="#6366f1" opacity="0.15" filter="url(#glowEffect)" class="pulse-circle" />
+  <circle cx="1050" cy="270" r="200" fill="#ec4899" opacity="0.12" filter="url(#glowEffect)" class="pulse-circle" style="animation-delay: -2s;" />
+  <circle cx="900" cy="80" r="140" fill="#06b6d4" opacity="0.12" filter="url(#glowEffect)" class="pulse-circle" style="animation-delay: -1s;" />
+
+  <!-- Dynamic Metering Waves & Event Streams -->
+  <path d="M -50 280 Q 300 340 650 260 T 1250 290" fill="none" stroke="url(#primaryGlow)" stroke-width="2" opacity="0.4" class="wave-line" />
+  <path d="M -50 310 Q 350 220 750 310 T 1250 240" fill="none" stroke="url(#cyanGlow)" stroke-width="1.5" opacity="0.3" class="data-stream" />
+
+  <!-- Animated Real-time Analytics Cards (Positioned safely on the right side) -->
+  <g transform="translate(820, 75)" class="float-node">
+    <!-- Card Frame -->
+    <rect width="320" height="210" rx="12" fill="url(#cardBg)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" backdrop-filter="blur(10px)" />
+    
+    <!-- Card Header -->
+    <circle cx="30" cy="30" r="6" fill="#10b981" />
+    <text x="45" y="34" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">LIVE EVENT INGESTION</text>
+    <text x="240" y="34" fill="#6366f1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700">250K/s</text>
+
+    <!-- Dynamic Meter Bars -->
+    <g transform="translate(30, 55)">
+      <!-- Metric Item 1: Token Usage -->
+      <text x="0" y="15" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">AI LLM Tokens</text>
+      <rect x="0" y="22" width="260" height="6" rx="3" fill="rgba(255, 255, 255, 0.08)" />
+      <rect x="0" y="22" width="210" height="6" rx="3" fill="url(#primaryGlow)" filter="url(#softGlow)" />
+      
+      <!-- Metric Item 2: API Calls -->
+      <text x="0" y="48" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">API Monitization Event</text>
+      <rect x="0" y="55" width="260" height="6" rx="3" fill="rgba(255, 255, 255, 0.08)" />
+      <rect x="0" y="55" width="165" height="6" rx="3" fill="url(#cyanGlow)" filter="url(#softGlow)" />
+
+      <!-- Metric Item 3: Storage GB-hrs -->
+      <text x="0" y="81" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Compute &amp; Storage</text>
+      <rect x="0" y="88" width="260" height="6" rx="3" fill="rgba(255, 255, 255, 0.08)" />
+      <rect x="0" y="88" width="230" height="6" rx="3" fill="#f59e0b" filter="url(#softGlow)" />
+    </g>
+
+    <!-- Mini Chart Graph Wave at Card Bottom -->
+    <path d="M 30 185 Q 80 160 130 175 T 230 160 T 290 180" fill="none" stroke="#8b5cf6" stroke-width="2" opacity="0.8" />
+    <circle cx="230" cy="160" r="4" fill="#ec4899" filter="url(#softGlow)" />
+  </g>
+
+  <!-- Left Side Dynamic Accent Nodes (Non-overlapping) -->
+  <g transform="translate(60, 260)" class="float-node" style="animation-delay: -3s;">
+    <rect width="130" height="36" rx="18" fill="rgba(99, 102, 241, 0.15)" stroke="rgba(99, 102, 241, 0.4)" stroke-width="1" />
+    <circle cx="20" cy="18" r="5" fill="#6366f1" />
+    <text x="34" y="22" fill="#c7d2fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">⚡ Real-time</text>
+  </g>
+
+  <g transform="translate(205, 260)" class="float-node" style="animation-delay: -1.5s;">
+    <rect width="155" height="36" rx="18" fill="rgba(6, 182, 212, 0.15)" stroke="rgba(6, 182, 212, 0.4)" stroke-width="1" />
+    <circle cx="20" cy="18" r="5" fill="#06b6d4" />
+    <text x="34" y="22" fill="#a5f3fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">💳 Usage Billing</text>
+  </g>
+
+  <g transform="translate(375, 260)" class="float-node" style="animation-delay: -4s;">
+    <rect width="135" height="36" rx="18" fill="rgba(236, 72, 153, 0.15)" stroke="rgba(236, 72, 153, 0.4)" stroke-width="1" />
+    <circle cx="20" cy="18" r="5" fill="#ec4899" />
+    <text x="34" y="22" fill="#fbcfe8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">🤖 AI Tokens</text>
+  </g>
+
+
+  <!-- FOREGROUND LAYER: MAIN TITLE & SUBTITLE (CLEAR & UNBLOCKABLE) -->
+  
+  <g transform="translate(60, 95)">
+    <!-- Badge above Title -->
+    <g transform="translate(0, 0)">
+      <rect width="275" height="28" rx="14" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" />
+      <text x="14" y="18" fill="#818cf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" letter-spacing="1">CURATED DEVELOPER ECOSYSTEM</text>
+    </g>
+
+    <!-- Main Title (Lightning Icon + Text) -->
+    <g transform="translate(0, 55)">
+      <!-- Lightning Icon -->
+      <path d="M 0 10 L 18 -12 L 10 6 L 26 6 L 6 30 L 12 14 Z" fill="url(#primaryGlow)" filter="url(#softGlow)" transform="scale(1.2)" />
+      
+      <text x="40" y="16" fill="url(#textGradient)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" font-weight="800" letter-spacing="-0.5" class="shimmer-text">
+        Awesome Cloud Metering
+      </text>
+      
+      <text x="40" y="54" fill="url(#primaryGlow)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="26" font-weight="700">
+        &amp; Usage-Based Billing Platform Ecosystem
+      </text>
+    </g>
+
+    <!-- Subtitle Description -->
+    <text x="0" y="142" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="400">
+      Production-ready SaaS &amp; Open-Source Infrastructure for Event Ingestion, Entitlements &amp; AI Token Monetization.
+    </text>
+  </g>
+
+</svg>
